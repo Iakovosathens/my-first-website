@@ -1,29 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const submenuParents = document.querySelectorAll(".has-submenu > a");
+  const menuLinks = document.querySelectorAll(".menu-link");
 
-  submenuParents.forEach(link => {
+  menuLinks.forEach(link => {
     link.addEventListener("click", function (e) {
-      e.preventDefault(); // Αποτροπή μετάβασης σε άλλο link
-      
-      const submenu = this.nextElementSibling;
+      e.preventDefault();
 
-      // Κλείνουμε όλα τα υπομενού εκτός από αυτό που άνοιξε
-      document.querySelectorAll(".submenu").forEach(menu => {
-        if (menu !== submenu) {
-          menu.classList.remove("show");
+      // Κλείνουμε όλα τα υπομενού πρώτα
+      document.querySelectorAll(".submenu").forEach(sub => {
+        if (sub !== this.nextElementSibling) {
+          sub.classList.remove("show");
         }
       });
 
-      // Εναλλαγή εμφάνισης του υπομενού που κάναμε κλικ
-      submenu.classList.toggle("show");
+      // Τoggλάρουμε το υπομενού που ανοίγει τώρα
+      const submenu = this.nextElementSibling;
+      if (submenu) {
+        submenu.classList.toggle("show");
+      }
     });
   });
 
-  // Κλείνουμε όλα τα υπομενού αν κάνεις κλικ εκτός του μενού
+  // Κλείσε υπομενού αν κάνεις κλικ εκτός μενού
   document.addEventListener("click", function (e) {
     if (!e.target.closest(".main-menu")) {
-      document.querySelectorAll(".submenu").forEach(menu => {
-        menu.classList.remove("show");
+      document.querySelectorAll(".submenu").forEach(sub => {
+        sub.classList.remove("show");
       });
     }
   });

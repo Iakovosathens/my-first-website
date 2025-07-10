@@ -35,9 +35,8 @@ body {
   background-color: #555;
 }
 
-/* Υπομενού */
 .submenu {
-  display: none; /* Κρυφό από default */
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -47,15 +46,6 @@ body {
 }
 
 .submenu.show {
-  display: block; /* Εμφάνιση όταν έχει κλάση show */
-}
-
-.submenu li a {
-  padding: 10px;
-  color: white;
   display: block;
 }
 
-.submenu li a:hover {
-  background-color: #666;
-}
