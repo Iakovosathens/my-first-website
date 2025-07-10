@@ -10,3 +10,52 @@ body {
   max-width: 3em;        /* Μέγιστο πλάτος για να μη μεγαλώνει πολύ */
   vertical-align: middle; /* Ευθυγράμμιση με το κείμενο */
 }
+
+.main-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Οριζόντια διάταξη */
+  background-color: #333;
+}
+
+.main-menu ul li {
+  position: relative;
+}
+
+.main-menu ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.main-menu ul li:hover {
+  background-color: #555;
+}
+
+/* Απόκρυψη υπομενού */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Από κάτω από το βασικό μενού */
+  left: 0;
+  background-color: #444;
+  min-width: 150px;
+  z-index: 1000;
+  flex-direction: column; /* Κάθετη λίστα */
+}
+
+/* Εμφάνιση υπομενού στο hover */
+.main-menu ul li:hover > .submenu {
+  display: flex;
+}
+
+.submenu li a {
+  padding: 10px;
+  color: white;
+}
+
+.submenu li a:hover {
+  background-color: #666;
+}
