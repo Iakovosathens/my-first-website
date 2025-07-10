@@ -37,7 +37,7 @@ body {
 
 /* Υπομενού */
 .submenu {
-  display: none;
+  display: none; /* Κρυφό από default */
   position: absolute;
   top: 100%;
   left: 0;
@@ -47,7 +47,7 @@ body {
 }
 
 .submenu.show {
-  display: block;
+  display: block; /* Εμφάνιση όταν έχει κλάση show */
 }
 
 .submenu li a {
