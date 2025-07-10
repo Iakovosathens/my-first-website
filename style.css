@@ -4,8 +4,9 @@ body {
   text-align: left;
   padding-top: 50px;
 }
+
 .logo-image {
-  height: 1em;           
-  max-width: 3em;        
-  vertical-align: middle; 
+  height: 1em;           /* Ύψος εικόνας ίδιο με μέγεθος γραμματοσειράς */
+  max-width: 3em;        /* Μέγιστο πλάτος για να μη μεγαλώνει πολύ */
+  vertical-align: middle; /* Ευθυγράμμιση με το κείμενο */
 }
