@@ -4,3 +4,8 @@ body {
   text-align: left;
   padding-top: 50px;
 }
+.logo-image {
+  height: 1em;           
+  max-width: 3em;        
+  vertical-align: middle; 
+}
