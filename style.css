@@ -38,17 +38,18 @@ body {
 .submenu {
   display: none;
   position: absolute;
-  top: 100%; /* Από κάτω από το βασικό μενού */
+  top: 100%;
   left: 0;
   background-color: #444;
   min-width: 150px;
   z-index: 1000;
-  flex-direction: column; /* Κάθετη λίστα */
+  flex-direction: column;
 }
 
-/* Εμφάνιση υπομενού στο hover */
+/* Εμφάνιση του υπομενού στο hover */
 .main-menu ul li:hover > .submenu {
   display: flex;
+  flex-direction: column;
 }
 
 .submenu li a {
