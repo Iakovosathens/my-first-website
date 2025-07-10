@@ -3,12 +3,13 @@ body {
   background-color: #f0f0f0;
   text-align: left;
   padding-top: 50px;
+  margin: 0;
 }
 
 .logo-image {
-  height: 1em;           /* Ύψος εικόνας ίδιο με μέγεθος γραμματοσειράς */
-  max-width: 3em;        /* Μέγιστο πλάτος για να μη μεγαλώνει πολύ */
-  vertical-align: middle; /* Ευθυγράμμιση με το κείμενο */
+  height: 1em;
+  max-width: 3em;
+  vertical-align: middle;
 }
 
 .main-menu ul {
@@ -34,7 +35,7 @@ body {
   background-color: #555;
 }
 
-/* Απόκρυψη υπομενού αρχικά */
+/* Υπομενού */
 .submenu {
   display: none;
   position: absolute;
@@ -45,8 +46,7 @@ body {
   z-index: 1000;
 }
 
-/* Εμφάνιση υπομενού όταν κάνεις hover στο γονικό li */
-.main-menu ul li:hover .submenu {
+.submenu.show {
   display: block;
 }
 

@@ -1,16 +1,12 @@
-function sayHi() {
-  alert("Hello from Jakob!");
-}
 document.addEventListener("DOMContentLoaded", function () {
-  const submenuParents = document.querySelectorAll(".has-submenu > a");
+  const submenuLinks = document.querySelectorAll(".has-submenu > a");
 
-  submenuParents.forEach(link => {
+  submenuLinks.forEach(link => {
     link.addEventListener("click", function (e) {
-      e.preventDefault(); // Αποτρέπουμε το default κλικ
-
+      e.preventDefault();
       const submenu = this.nextElementSibling;
 
-      // Κλείνουμε όλα τα ανοιχτά υπομενού
+      // Κλείνουμε όλα τα άλλα υπομενού
       document.querySelectorAll(".submenu").forEach(menu => {
         if (menu !== submenu) {
           menu.classList.remove("show");
@@ -20,5 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
       // Εναλλαγή εμφάνισης
       submenu.classList.toggle("show");
     });
+  });
+
+  // Κλείνουμε τα υπομενού όταν κάνουμε click εκτός
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".main-menu")) {
+      document.querySelectorAll(".submenu").forEach(menu => {
+        menu.classList.remove("show");
+      });
+    }
   });
 });
